@@ -1,0 +1,51 @@
+<div id="user-data">
+  <div class="form-group">
+    <label for="username">Name:</label>
+    <input type="text" id="username" class="form-control" [(ngModel)]="name" />
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="age">Age:</label>
+    <input type="text" id="age" class="form-control" [(ngModel)]="age" />
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="level">Level:</label>
+    <input type="text" id="level" class="form-control" [(ngModel)]="level" />
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="gpa">Gpa:</label>
+    <input type="text" id="gpa" class="form-control" [(ngModel)]="gpa" />
+  </div>
+  <br>
+  <hr />
+  <div class="form-group">
+    <label for="dId">Document Id:</label>
+    <input type="text" id="dId" class="form-control" [(ngModel)]="ref" />
+  </div>
+</div>
+<button (click)="addNewDocument()" class="btn btn-primary" type="button">
+  Add
+</button>
+<br>
+<button (click)="addNewDocumentwithSpecificID()" class="btn btn-primary" type="button">
+  Add with specific id
+</button>
+<br>
+<button (click)="updateDocument()" class="btn btn-success ml" type="button">
+  Update specific document with document Id
+</button>
+<br>
+<button (click)="getDocument()" class="btn btn-default ml" type="button">
+  Get specific document with document Id
+</button>
+<br>
+<button (click)="delete()" class="btn btn-danger ml" type="button">
+  Delete document with document Id
+</button>
+<br>
+<button (click)="reset()" class="btn btn-danger ml" type="button">
+  Reset
+</button>
+

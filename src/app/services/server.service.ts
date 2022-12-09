@@ -1,55 +1,61 @@
-import { Injectable } from '@angular/core';
-import {
-  addDoc,
-  Firestore,
-  collection,
-  doc,
-  updateDoc,
-  setDoc,
-  getDoc,
-  deleteDoc,
-} from '@angular/fire/firestore';
-import Student from 'src/interfaces/student.interface';
+import { Injectable } from "@angular/core";
+import { Auth } from "@angular/fire/auth";
+import { 
+    addDoc, 
+    Firestore,
+    collection, 
+    doc,
+    updateDoc, 
+    setDoc, 
+    getDoc, 
+    deleteDoc } from "@angular/fire/firestore";
+import User from "../models/user";
 
 @Injectable()
 export class ServerService {
-  constructor(private db: Firestore) {}
 
-  addNewDocument(user: Student) {
-    const dbInstance = collection(this.db, 'user');
-    return addDoc(dbInstance, { ...user });
-  }
+    listOfDocs: any[] = [];
+    constructor(private db: Firestore) {}
 
-  addNewDocumentWithSpecificID(user: Student, id: string) {
-    const dbInstance = collection(this.db, 'user');
-    return setDoc(doc(dbInstance, id), { ...user });
-  }
+    addNewDocument(user: User) {
+        const dbInstance = collection(this.db, "users");
+        return addDoc(dbInstance, { ...user });
+    }
 
-  updateDocument(id: string, name: string, age: number) {
-    const dataUpdate = doc(this.db, 'user', id);
-    return updateDoc(dataUpdate, {
-      name: name,
-      age: age,
-    });
-  }
+    addNewDocumentWithSpecificID(user: User, id: string) {
+        const dbInstance = collection(this.db, "users");
+        return setDoc(doc(dbInstance, id), { ...user });
+    }
 
-  getDocument(id: string) {
-    const dbInstance = collection(this.db, 'user');
-    return getDoc(doc(dbInstance, id));
-  }
+    updateDocument(id: string, name: string, age: number, level: number, gpa:number) {
+        const dataUpdate = doc(this.db, "users", id);
+        return updateDoc(dataUpdate, {
+            name: name,
+            age: age,
+            level: level,
+            gpa: gpa,
+        });
+    }
 
-  getAll() {
-    return collection(this.db, 'user');
-  }
+    getDocument(id: string) {
+        const dbInstance = collection(this.db, "users");
+        return getDoc(doc(dbInstance, id));
+    }
 
-  deleteDocument(id: string) {
-    const dataDelete = doc(this.db, 'user', id);
-    return deleteDoc(dataDelete);
-  }
 
-  /*SearchForDocInArray(id: string) {
+    getAll() {
+        return collection(this.db, "users");
+    }
+
+    deleteDocument(id: string) {
+        const dataDelete = doc(this.db, "users", id);
+        return deleteDoc(dataDelete);
+    }
+
+    SearchForDocInArray(id: string) {
         return this.listOfDocs.find((doc) => {
             return doc.id == id;
         });
-    }*/
+    }
+
 }
