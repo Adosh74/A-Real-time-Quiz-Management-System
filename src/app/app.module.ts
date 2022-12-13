@@ -14,12 +14,16 @@ import { ServerService } from './services/server.service';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StudNavbarComponent } from './stud-navbar/stud-navbar.component';
+import { MainHomesdComponent } from './student/main-homesd/main-homesd.component';
 
 const appRoutes: Routes = [
-  { path: '', component: SenderComponent },
+  { path: '', component: MainHomesdComponent },
   { path: 'recieve', component: RecieveComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'completeDate', component: SenderComponent },
 ];
 
 @NgModule({
@@ -29,6 +33,8 @@ const appRoutes: Routes = [
     RecieveComponent,
     LoginComponent,
     RegisterComponent,
+    StudNavbarComponent,
+    MainHomesdComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,7 @@ const appRoutes: Routes = [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
+    NgbModule,
   ],
   providers: [ServerService, AuthService],
   bootstrap: [AppComponent],
