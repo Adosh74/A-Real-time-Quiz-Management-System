@@ -1,3 +1,5 @@
+import { UserCredential } from '@angular/fire/auth';
+
 export default class User {
     name: string = "";
     age: number = 0;

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DocumentReference, DocumentSnapshot } from '@angular/fire/firestore';
 import User from '../models/user';
 import { ServerService } from '../services/server.service';
-
+import { UserCredential } from '@angular/fire/auth';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-sender',
   templateUrl: './sender.component.html',
@@ -15,14 +16,13 @@ export class SenderComponent {
   level:number=1;
   gpa:number=4;
   user: User;
-  ref?: string;
-
-  constructor(private serverService: ServerService) {
+  ref?: string=this.authService.getId();
+  constructor(private serverService: ServerService,private authService: AuthService) {
     this.user = new User();
   }
 
 
-  addNewDocument() {
+ /* addNewDocument() {
     this.user.name = this.name;
     this.user.age = this.age;
     this.user.level=this.level;
@@ -33,7 +33,7 @@ export class SenderComponent {
       this.ref = ref.id
     });
   }
-
+*/
   addNewDocumentwithSpecificID() {
     this.user.name = this.name;
     this.user.age = this.age;

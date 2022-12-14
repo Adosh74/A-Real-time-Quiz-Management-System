@@ -6,6 +6,14 @@ import { UserAuth } from '../models/auth';
 @Injectable()
 export class AuthService {
 
+
+  id:string = "";
+setid(id:string){
+  this.id=id;
+}
+getId(){
+  return this.id;
+}
   constructor(private auth: Auth) { }
 
   login(userAuth: UserAuth) {
@@ -17,6 +25,8 @@ export class AuthService {
   }
 
   logout() {
+    this.id = "";
+
     return signOut(this.auth);
   }
 }
