@@ -19,7 +19,7 @@ export class RegisterComponent {
   register() {
     let user = new UserAuth(this.email, this.password)
     this.authService.register(user).then(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/completeDate']);
     }, (error) => {
       console.log(error);
     });

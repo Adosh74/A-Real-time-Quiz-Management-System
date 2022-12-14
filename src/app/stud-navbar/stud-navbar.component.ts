@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-stud-navbar',
   templateUrl: './stud-navbar.component.html',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudNavbarComponent implements OnInit {
   isOpen: boolean = false;
-  constructor() {}
+  constructor(private authService: AuthService,private router: Router) {}
 
-  ngOnInit(): void {}
+  logout() {
+    this.authService.logout().then(()=>{
+      this.router.navigate(['/']);
+    });
+  }
+  
+
+  ngOnInit(): void {
+  }
 
   toggleNavbar() {
-    this.isOpen = !this.isOpen;
+    this.isOpen = !this.isOpen; 
   }
+
+
+ 
+  
 }
