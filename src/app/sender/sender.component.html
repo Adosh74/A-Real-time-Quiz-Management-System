@@ -21,19 +21,19 @@
   <br>
   <hr />
   <div class="form-group">
-    <label for="dId">Document Id:</label>
-    <input type="text" id="dId" class="form-control" [(ngModel)]="ref" />
+    <!-- <label for="dId">Document Id:</label> -->
+    <!-- <input class="hidden" type="text" id="dId" class="form-control" [(ngModel)]="ref" /> -->
   </div>
 </div>
 <!--<button (click)="addNewDocument()" class="btn btn-primary" type="button">
   Add
 </button>-->
 <br>
-<button (click)="addNewDocumentwithSpecificID()" class="btn btn-primary" type="button">
-  Add with specific id
+<button (click)="addNewDocumentwithSpecificID()" [routerLink]="['/', 'quizzes']" class="btn btn-primary" type="button">
+  submit
 </button>
 <br>
-<button (click)="updateDocument()" class="btn btn-success ml" type="button">
+<!-- <button (click)="updateDocument()" class="btn btn-success ml" type="button">
   Update specific document with document Id
 </button>
 <br>
@@ -48,5 +48,5 @@
 <button (click)="reset()" class="btn btn-danger ml" type="button">
   Reset
 </button>
-
+ -->
 
