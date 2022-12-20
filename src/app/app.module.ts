@@ -30,6 +30,8 @@ const appRoutes: Routes = [
   { path: 'completeDate', component: SenderComponent },
   { path: 'quizzes', component: AllQuizzesComponent },
   { path: 'quiz', component: QuizDetailComponent },
+  { path: 'professor', component: HomeprofComponent },
+  { path: 'login-professor', component: LoginProfComponent },
 ];
 
 @NgModule({
