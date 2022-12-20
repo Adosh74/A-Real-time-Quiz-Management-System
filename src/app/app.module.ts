@@ -19,6 +19,8 @@ import { StudNavbarComponent } from './stud-navbar/stud-navbar.component';
 import { MainHomesdComponent } from './student/main-homesd/main-homesd.component';
 import { AllQuizzesComponent } from './student/all-quizzes/all-quizzes.component';
 import { QuizDetailComponent } from './student/quiz-detail/quiz-detail.component';
+import { LoginProfComponent } from './prof/login-prof/login-prof.component';
+import { HomeprofComponent } from './prof/homeprof/homeprof.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainHomesdComponent },
@@ -41,6 +43,8 @@ const appRoutes: Routes = [
     MainHomesdComponent,
     AllQuizzesComponent,
     QuizDetailComponent,
+    LoginProfComponent,
+    HomeprofComponent,
   ],
   imports: [
     BrowserModule,
