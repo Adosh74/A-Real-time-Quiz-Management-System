@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudNavbarComponent } from './stud-navbar/stud-navbar.component';
 import { MainHomesdComponent } from './student/main-homesd/main-homesd.component';
 import { AllQuizzesComponent } from './student/all-quizzes/all-quizzes.component';
+import { QuizDetailComponent } from './student/quiz-detail/quiz-detail.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainHomesdComponent },
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'completeDate', component: SenderComponent },
   { path: 'quizzes', component: AllQuizzesComponent },
+  { path: 'quiz', component: QuizDetailComponent },
 ];
 
 @NgModule({
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     StudNavbarComponent,
     MainHomesdComponent,
     AllQuizzesComponent,
+    QuizDetailComponent,
   ],
   imports: [
     BrowserModule,

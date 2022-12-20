@@ -1,0 +1,49 @@
+<p></p>
+<div class="container">
+<div id="accordion" *ngFor="let question of questions; index as i" >
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Question Number {{i + 1}}
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+         {{question.questionText}}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            True
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          false
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button (click)="answerFalse(i)" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            False
+          </button>
+        </h5>
+      </div>
+    </div>
+    <p></p>
+  </div>
+  <button type="button" class="btn btn-primary btn-lg btn-block" (click)="finish()">Finish</button>
+  <p></p>
+  <button type="button" class="btn btn-danger btn-lg btn-block"[routerLink]="['/']" >Leave</button>
+  
+</div>
+<p></p>
