@@ -7,8 +7,8 @@
                 <h5 class="card-header">{{quiz.courseName | titlecase}}</h5>
                 <div class="card-body">
                     <h5 class="card-title">{{quiz.tittle | titlecase}}</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text">{{quiz.id}}</p>
+                    <a  class="btn btn-primary" (click)="chooseQuiz(quiz.id, quiz.questionsId)">Go somewhere</a>
                 </div>
             </div>
         </div>
