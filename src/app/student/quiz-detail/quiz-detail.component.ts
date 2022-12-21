@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { collectionSnapshots } from '@angular/fire/firestore';
 import { RouterLink } from '@angular/router';
+import { QuestionService } from 'src/app/services/question.service';
+import { Subscription, map } from 'rxjs';
 
 @Component({
   selector: 'app-quiz-detail',
@@ -7,31 +10,45 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./quiz-detail.component.css'],
 })
 export class QuizDetailComponent implements OnInit {
-  constructor() {}
+  constructor(private questionService: QuestionService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    collectionSnapshots(this.questionService.getAllQuestions())
+      .pipe(
+        map((changes) => {
+          return changes.map((c) => {
+            return { id: c.id, ...c.data() };
+          });
+        })
+      )
+      .subscribe((data) => {
+        this.questions = data;
+        console.log(data);
+      });
+  }
   answerObj = {
     index: 0,
     answer: '',
   };
+  questions: any[] = [];
   sdAnswer: any[] = [];
-  questions: any[] = [
-    {
-      questionText:
-        '1-Software engineering is the use of sound engineering methods and principles to obtain software that is reliable ?',
-      answer: 'false',
-    },
-    {
-      questionText:
-        '2-One benefit to the use of symbolic languages is improved programming efficiency compared to a machine language?',
-      answer: 'true',
-    },
-    {
-      questionText:
-        '3-Main memory is a place where the programs and data are stored permanently during processing?',
-      answer: 'true',
-    },
-  ];
+  // questions: any[] = [
+  //   {
+  //     questionText:
+  //       '1-Software engineering is the use of sound engineering methods and principles to obtain software that is reliable ?',
+  //     answer: 'false',
+  //   },
+  //   {
+  //     questionText:
+  //       '2-One benefit to the use of symbolic languages is improved programming efficiency compared to a machine language?',
+  //     answer: 'true',
+  //   },
+  //   {
+  //     questionText:
+  //       '3-Main memory is a place where the programs and data are stored permanently during processing?',
+  //     answer: 'true',
+  //   },
+  // ];
 
   answerFalse(index: number) {
     this.answerObj.index = index;
