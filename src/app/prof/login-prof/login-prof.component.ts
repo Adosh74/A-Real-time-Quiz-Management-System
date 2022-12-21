@@ -24,7 +24,7 @@ export class LoginProfComponent {
     this.authService.login(user).then((userData: UserCredential) => {
       console.log(userData.user.uid);
       this.authService.setid(userData.user.uid);
-      this.router.navigate(['/']);
+      this.router.navigate(['/professor']);
     });
   }
 }
