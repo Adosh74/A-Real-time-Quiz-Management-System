@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import Student from 'src/interfaces/student.interface';
 import { collectionSnapshots } from '@angular/fire/firestore';
 import { RouterLink } from '@angular/router';
@@ -6,6 +7,8 @@ import { QuestionService } from 'src/app/services/question.service';
 import { Subscription, map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import StudentScore from 'src/app/models/studentScore';
+=======
+>>>>>>> parent of fc5c9a1 (.)
 
 @Component({
   selector: 'app-quiz-detail',
