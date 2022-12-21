@@ -25,6 +25,7 @@ import { AllquizzesComponent } from './prof/homeprof/allquizzes/allquizzes.compo
 import { StudentsGradesComponent } from './prof/homeprof/students-grades/students-grades.component';
 import { AddQuestionsComponent } from './prof/homeprof/add-questions/add-questions.component';
 import { AddQuizComponent } from './prof/homeprof/add-quiz/add-quiz.component';
+import { ResultComponent } from './student/result/result.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainHomesdComponent },
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
     StudentsGradesComponent,
     AddQuestionsComponent,
     AddQuizComponent,
+    ResultComponent,
     
   ],
   imports: [
