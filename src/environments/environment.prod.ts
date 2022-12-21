@@ -7,5 +7,7 @@ export const environment = {
     authDomain: 'quiz-c74a4.firebaseapp.com',
     messagingSenderId: '259032360946',
   },
-  production: true
+  production: true,
+  ProfUsername : 'farah@gmail.com',
+  profPassword : 'farah@swe'
 };

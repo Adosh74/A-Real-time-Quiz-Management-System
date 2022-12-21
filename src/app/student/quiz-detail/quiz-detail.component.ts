@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import Student from 'src/interfaces/student.interface';
 import { collectionSnapshots } from '@angular/fire/firestore';
 import { RouterLink } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import { Subscription, map } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import StudentScore from 'src/app/models/studentScore';
 
 @Component({
   selector: 'app-quiz-detail',
@@ -10,7 +13,10 @@ import { Subscription, map } from 'rxjs';
   styleUrls: ['./quiz-detail.component.css'],
 })
 export class QuizDetailComponent implements OnInit {
-  constructor(private questionService: QuestionService) {}
+  constructor(
+    private questionService: QuestionService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     collectionSnapshots(this.questionService.getAllQuestions())
@@ -26,6 +32,7 @@ export class QuizDetailComponent implements OnInit {
         console.log(data);
       });
   }
+  studentScore = new StudentScore();
   answerObj = {
     index: 0,
     answer: '',
@@ -65,6 +72,9 @@ export class QuizDetailComponent implements OnInit {
           this.finalScore = this.finalScore + 1;
         }
       }
+      this.studentScore.studentId = this.authService.getId();
+      this.studentScore.finalScore = this.finalScore;
+      this.questionService.addNewDocument(this.studentScore);
       alert(`your score is ${this.finalScore}`);
     } catch (error) {
       alert(`please solve all questions`);
