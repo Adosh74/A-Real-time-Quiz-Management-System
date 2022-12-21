@@ -32,7 +32,10 @@ export class QuizService {
     return addDoc(dbInstance, { ...quiz });
   }
 
-
+  deleteDocument(id: string) {
+    const dataDelete = doc(this.fs, 'quizzes', id);
+    return deleteDoc(dataDelete);
+  }
 
   addNewDocumentWithSpecificID(quiz: Quiz, courseName: string) {
     const dbInstance = collection(this.fs, 'quizzes');
@@ -43,7 +46,7 @@ export class QuizService {
     courseName: string,
     des: string,
     tittle: string,
-    quiznumber: number,
+    quiznumber: number
   ) {
     const dataUpdate = doc(this.fs, 'quizzes', courseName);
     return updateDoc(dataUpdate, {
@@ -58,5 +61,4 @@ export class QuizService {
     const dbInstance = collection(this.fs, 'quizzes');
     return getDoc(doc(dbInstance, courseName));
   }
-
 }
