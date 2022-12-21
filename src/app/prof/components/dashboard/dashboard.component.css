@@ -1,0 +1,15 @@
+.sidebar {
+
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+.sidebar{
+
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    display: block !important;
+    cursor: pointer;
+}

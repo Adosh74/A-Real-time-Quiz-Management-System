@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Student from 'src/interfaces/student.interface';
 
 @Component({
   selector: 'app-quiz-detail',

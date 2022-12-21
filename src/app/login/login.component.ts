@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserAuth } from '../models/auth';
 import { AuthService } from '../services/auth.service';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
