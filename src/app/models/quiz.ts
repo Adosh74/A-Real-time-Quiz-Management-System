@@ -5,3 +5,10 @@ export interface Quiz{
     quiz_date : string,
     list_of_questions: number  
 }
+//export default class Quiz {
+  //  courseName?: string;
+    //des?: string;
+    //tittle?: string;
+    //quiznumber?: number;
+  //}
+  

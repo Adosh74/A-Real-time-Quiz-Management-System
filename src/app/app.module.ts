@@ -18,6 +18,13 @@ import { StudNavbarComponent } from './stud-navbar/stud-navbar.component';
 import { MainHomesdComponent } from './student/main-homesd/main-homesd.component';
 import { AllQuizzesComponent } from './student/all-quizzes/all-quizzes.component';
 import { QuizDetailComponent } from './student/quiz-detail/quiz-detail.component';
+import { AddQuestionsComponent } from './prof/homeprof/add-questions/add-questions.component';
+import { AddQuizComponent } from './prof/homeprof/add-quiz/add-quiz.component';
+import { AllquizzesComponent } from './prof/homeprof/allquizzes/allquizzes.component';
+import { HomeprofComponent } from './prof/homeprof/homeprof.component';
+import { StudentsGradesComponent } from './prof/homeprof/students-grades/students-grades.component';
+import { LoginProfComponent } from './prof/login-prof/login-prof.component';
+import { ResultComponent } from './student/result/result.component';
 const appRoutes: Routes = [
   { path: '', component: MainHomesdComponent },
   { path: 'recieve', component: RecieveComponent },
@@ -26,6 +33,14 @@ const appRoutes: Routes = [
   { path: 'completeDate', component: SenderComponent },
   { path: 'quizzes', component: AllQuizzesComponent },
   { path: 'quiz', component: QuizDetailComponent },
+  { path: 'professor', component: HomeprofComponent },
+  { path: 'login-professor', component: LoginProfComponent },
+  {path:'add-questions',component:AddQuestionsComponent},
+  {path:'add-quiz',component:AddQuizComponent},
+  {path:'allquizzes',component:AllquizzesComponent},
+  {path:'students-grades',component:StudentsGradesComponent},
+  
+
 ];
 
 @NgModule({
@@ -39,9 +54,10 @@ const appRoutes: Routes = [
     MainHomesdComponent,
     AllQuizzesComponent,
     QuizDetailComponent,
-    
-  
+    HomeprofComponent,
+    ResultComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
