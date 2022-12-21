@@ -1,7 +1,7 @@
 export default class Quiz {
-    courseName?: string;
-    des?: string;
-    tittle?: string;
-    quiznumber?: number;
+    courseName?: string="";
+    des?: string="";
+    tittle?: string="";
+    quiznumber?: number=0;
   }
   
