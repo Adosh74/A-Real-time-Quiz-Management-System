@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+export default class Quiz {
+    courseName?: string="";
+    des?: string="";
+    tittle?: string="";
+    quiznumber?: number=0;
+  }
+  
+=======
 export interface Quiz{
     quiz_name : string,
     quiz_Id : number,
@@ -12,3 +21,4 @@ export interface Quiz{
     //quiznumber?: number;
   //}
   
+>>>>>>> 653608c9bb4a2b3cbdf03c13c8f567b960dc77a8

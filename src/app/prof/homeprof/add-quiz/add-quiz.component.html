@@ -15,21 +15,21 @@
     <div class="form">
        <div class="inputfield">
           <label>Course Name:</label>
-          <input type="text" class="input">
+          <input type="text" class="input" [(ngModel)]="courseName" required="couese name">
        </div>  
         
        
       <div class="inputfield">
           <label>Tittle:</label>
-          <input type="text" class="input">
+          <input type="text" class="input" [(ngModel)]="tittle" >
        </div> 
        <div class="inputfield">
         <label>Quiz num:</label>
-        <input type="text" class="input">
+        <input type="text" class="input" [(ngModel)]="quiznumber">
      </div>  
       <div class="inputfield">
           <label>Description:</label>
-          <textarea class="textarea"></textarea>
+          <textarea class="textarea" [(ngModel)]="des"></textarea>
        </div> 
      
        <div class="date " style="margin-left: 142px;">
@@ -44,7 +44,9 @@
         <p>Agreed to terms and conditions</p>
      </div> 
       <div class="inputfield">
-        <input type="submit" value="Add" class="btn">
+        <button (click)="addNewQuiz()" [routerLink]="['/', 'add-questions']" class="btn btn-primary" type="button">
+          ADD
+        </button>
       </div>
     </div>
 </div>	

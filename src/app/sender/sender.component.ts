@@ -23,7 +23,7 @@ export class SenderComponent {
     this.user = new User();
   }
 
-  /* addNewDocument() {
+  /*addNewDocument() {
     this.user.name = this.name;
     this.user.age = this.age;
     this.user.level=this.level;
