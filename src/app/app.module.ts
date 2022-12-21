@@ -19,17 +19,13 @@ import { StudNavbarComponent } from './stud-navbar/stud-navbar.component';
 import { MainHomesdComponent } from './student/main-homesd/main-homesd.component';
 import { AllQuizzesComponent } from './student/all-quizzes/all-quizzes.component';
 import { QuizDetailComponent } from './student/quiz-detail/quiz-detail.component';
-<<<<<<< HEAD
+import { LoginProfComponent } from './prof/login-prof/login-prof.component';
+import { HomeprofComponent } from './prof/homeprof/homeprof.component';
+import { AllquizzesComponent } from './prof/homeprof/allquizzes/allquizzes.component';
+import { StudentsGradesComponent } from './prof/homeprof/students-grades/students-grades.component';
 import { AddQuestionsComponent } from './prof/homeprof/add-questions/add-questions.component';
 import { AddQuizComponent } from './prof/homeprof/add-quiz/add-quiz.component';
-import { AllquizzesComponent } from './prof/homeprof/allquizzes/allquizzes.component';
-import { HomeprofComponent } from './prof/homeprof/homeprof.component';
-import { StudentsGradesComponent } from './prof/homeprof/students-grades/students-grades.component';
-import { LoginProfComponent } from './prof/login-prof/login-prof.component';
-import { ResultComponent } from './student/result/result.component';
-=======
 
->>>>>>> parent of fc5c9a1 (.)
 const appRoutes: Routes = [
   { path: '', component: MainHomesdComponent },
   { path: 'recieve', component: RecieveComponent },
@@ -59,13 +55,14 @@ const appRoutes: Routes = [
     MainHomesdComponent,
     AllQuizzesComponent,
     QuizDetailComponent,
-<<<<<<< HEAD
+    LoginProfComponent,
     HomeprofComponent,
-    ResultComponent
-=======
->>>>>>> parent of fc5c9a1 (.)
+    AllquizzesComponent,
+    StudentsGradesComponent,
+    AddQuestionsComponent,
+    AddQuizComponent,
+    
   ],
-
   imports: [
     BrowserModule,
     FormsModule,
