@@ -37,6 +37,23 @@ export class AllQuizzesComponent implements OnInit {
         console.log(data);
       });
   }
+  private _searchFilter: string = '';
+  filterProductSearch: any[] = this.quizzes;
+
+  get searchFilter(): string {
+    return this._searchFilter;
+  }
+  set searchFilter(value: string) {
+    console.log(value);
+    this._searchFilter = value;
+    this.filterProductSearch = this.filterProducts(value);
+  }
+
+  filterProducts(value: string) {
+    return this.quizzes.filter((product: any) =>
+      product.courseName.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    );
+  }
 
   chooseQuiz(quizId: string, questionId: string) {
     console.log(this.studentId);
