@@ -6,10 +6,14 @@
         <span *ngIf="!username.valid && username.touched">Enter valid email</span>
     </div>
         <div class="form-group">
-        <label for="password">password</label>
+        <label for="age">password</label>
         <input type="password" ngModel name="password" class="form-control" required/>
     </div>
       <button [disabled]="!f.valid" class="btn btn-primary" type="submit">Login</button>
+<<<<<<< HEAD
       <p>Don't have an account? <a [routerLink]="['/', 'register']">Sign Up</a></p>
+=======
+      <p>Don't have an account? <a href="register">Sig Up</a></p>
+>>>>>>> parent of fc5c9a1 (.)
   </form>  
 </div>
