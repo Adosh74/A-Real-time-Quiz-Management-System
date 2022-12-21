@@ -21,6 +21,10 @@ import { AllQuizzesComponent } from './student/all-quizzes/all-quizzes.component
 import { QuizDetailComponent } from './student/quiz-detail/quiz-detail.component';
 import { LoginProfComponent } from './prof/login-prof/login-prof.component';
 import { HomeprofComponent } from './prof/homeprof/homeprof.component';
+import { AllquizzesComponent } from './prof/homeprof/allquizzes/allquizzes.component';
+import { StudentsGradesComponent } from './prof/homeprof/students-grades/students-grades.component';
+import { AddQuestionsComponent } from './prof/homeprof/add-questions/add-questions.component';
+import { AddQuizComponent } from './prof/homeprof/add-quiz/add-quiz.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainHomesdComponent },
@@ -32,6 +36,12 @@ const appRoutes: Routes = [
   { path: 'quiz', component: QuizDetailComponent },
   { path: 'professor', component: HomeprofComponent },
   { path: 'login-professor', component: LoginProfComponent },
+  {path:'add-questions',component:AddQuestionsComponent},
+  {path:'add-quiz',component:AddQuizComponent},
+  {path:'allquizzes',component:AllquizzesComponent},
+  {path:'students-grades',component:StudentsGradesComponent},
+  
+
 ];
 
 @NgModule({
@@ -47,6 +57,11 @@ const appRoutes: Routes = [
     QuizDetailComponent,
     LoginProfComponent,
     HomeprofComponent,
+    AllquizzesComponent,
+    StudentsGradesComponent,
+    AddQuestionsComponent,
+    AddQuizComponent,
+    
   ],
   imports: [
     BrowserModule,
