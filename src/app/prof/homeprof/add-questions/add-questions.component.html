@@ -1,1 +1,40 @@
-<p>add-questions works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ADD Questions</title>
+	<link rel="stylesheet" href="add-questions.component.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+        ADD Questions
+    </div>
+
+
+
+
+    <div class="form">
+       <div class="inputfield">
+          <label> --Questions :</label>
+          <input type="text" class="input"[(ngModel)]="questionText"  >
+       </div>     
+      <div class="inputfield">
+          <label>Answer:</label>
+          <input type="text" class="input" [(ngModel)]="answer" >
+       </div>    
+<br>
+
+<button (click)="addNewQuestion()" [routerLink]="['/', 'add-questions']" class="btn btn-primary" type="button">
+    ADD
+  </button>
+
+
+
+    
+</div>	
+</div>
+</body>
+</html>
